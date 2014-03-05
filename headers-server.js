@@ -90,7 +90,7 @@ headers.getClientIP = function(self, proxyCount) {
   var chain = this.get(self, 'x-ip-chain').split(',');
   if (typeof(proxyCount) == 'undefined')
     proxyCount = this.proxyCount;
-  return chain[chain.length - proxyCount - 1];
+  return chain[proxyCount];
 }
 
 /*
