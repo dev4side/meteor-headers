@@ -88,9 +88,7 @@ headers.ready = function(self) {
 headers.getClientIP = function(self, proxyCount) {
   checkSelf(self, 'getClientIP');
   var chain = this.get(self, 'x-ip-chain').split(',');
-  if (typeof(proxyCount) == 'undefined')
-    proxyCount = this.proxyCount;
-  return chain[proxyCount];
+  return chain[0];
 }
 
 /*
@@ -127,9 +125,7 @@ headers.methodGet = function(self, header) {
 headers.methodClientIP = function(self, proxyCount) {
   checkSelf(self, 'methodClientIP');
   var chain = this.methodGet(self, 'x-ip-chain');
-  if (typeof(proxyCount) == 'undefined')
-    proxyCount = this.proxyCount;
-  return chain[proxyCount];
+  return chain[0];
 }
 
 /*
