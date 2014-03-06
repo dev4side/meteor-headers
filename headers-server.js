@@ -129,7 +129,7 @@ headers.methodClientIP = function(self, proxyCount) {
   var chain = this.methodGet(self, 'x-ip-chain');
   if (typeof(proxyCount) == 'undefined')
     proxyCount = this.proxyCount;
-  return chain[chain.length - proxyCount - 1];
+  return chain[proxyCount];
 }
 
 /*
